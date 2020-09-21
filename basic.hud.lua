@@ -1,9 +1,20 @@
--- ternary / place in Library
+-- Ternary function / place in Library Start filter
 function ternary(cond, T, F)
     if cond then
         return T
     else
         return F
+    end
+end
+
+-- Round function / place in Library Start filter
+
+function round(num, numDecimalPlaces)
+    local mult = 10 ^ (numDecimalPlaces or 0)
+    if numDecimalPlaces ~= nil then
+        return math.floor(num * mult + 0.5) / mult
+    else
+        return math.floor((num * mult + 0.5) / mult)
     end
 end
 
@@ -19,45 +30,45 @@ flex-direction: column;
 }
 
 .controls-hud {
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-background-color: #34495E50;
-border-color: #333333;
-border-radius: 12px;
-width: 20%;
-padding: 1% 1.5%;
-overflow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #34495E50;
+  border-color: #333333;
+  border-radius: 12px;
+  width: 20%;
+  padding: 1% 1.5%;
+  overflow: none;
 }
 
 p {
-font-size: 20px;
-font-weight: 300;
-color: white;
+  font-size: 20px;  
+  font-weight: 300;
+  color: white;
 }
 
 .control-container {
-display: flex;
-justify-content: space-between;
-padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
 }
 
 .on {
-background-color: #039bef;
-margin-left: 10px;
-border-radius: 50%;
-width: 20px;
-height: 20px;
-border: 2px solid black;
+  background-color: #039bef;
+  margin-left: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
 }
 
 .off {
-background-color: red;
-margin-left: 10px;
-border-radius: 50%;
-width: 20px;
-height: 20px;
-border: 2px solid black;
+  background-color: red;
+  margin-left: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
 }
 </style>]]
 
@@ -76,3 +87,7 @@ local html = [[
 system.setScreen(css .. html)
 system.showScreen(1)
 
+--
+-- acknowledgements:
+-- original code by William & DaevaHush
+-- 
